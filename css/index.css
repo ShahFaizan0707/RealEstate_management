@@ -17,6 +17,33 @@ body {
     margin: 0;
 }
 
+.navbar {
+    background-color: #333;
+    padding: 1rem 0;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #f0f0f0;
+}
+
 .hero {
     display: flex;
     justify-content: center;
@@ -25,6 +52,9 @@ body {
     background-image: url("app-data/background.jpeg");
     background-size: cover;
     background-position: center;
+    opacity: 1;
+    transition: opacity 5s, backdrop-filter 1s;
+    backdrop-filter: blur(0);
     background-repeat: no-repeat;
 }
 
@@ -54,6 +84,120 @@ body {
 
 .cta-button:hover {
     background-color: #555;
+}
+
+
+
+/* about the project */
+
+.project-description {
+    background-color: #f9f9f9;
+    padding: 4rem 30px; /* Increase padding for larger section */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 3s, transform 0.1s;
+}
+
+.project-description.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.project-content h2 {
+    font-size: 2.5rem; /* Larger heading size */
+    margin-bottom: 1rem;
+    color: #333; /* Adjust color */
+}
+
+.project-content p {
+    font-size: 1.1rem; /* Slightly larger font size */
+    margin-bottom: 1rem;
+    line-height: 1.6; /* Improved line spacing */
+    color: #555; /* Adjust color */
+}
+
+.project-content a {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.project-content a:hover {
+    color: #0056b3; /* Hover color */
+}
+
+
+
+/* team section */
+
+.team-heading {
+   text-align: center;
+   margin-bottom: 20px;
+   font-size: 24px;
+   padding-bottom: 50px;
+} 
+
+
+ .about-team.active {
+   opacity: 1;
+   transform: translateY(0);
+}  
+
+
+.about-team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+
+
+.team-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+}
+
+.profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #333;
+}
+
+.team-member h4 {
+    color: #666;
+    margin-top: 5px;
+}
+
+.team-member p {
+    margin: 10px 0;
+    color: #555;
 }
 
 .footer {

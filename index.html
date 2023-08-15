@@ -9,19 +9,100 @@
 </head>
 <body>
     <header class="header">
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+            </ul>
+        </nav>
         <h1 class="heading">Real Estate Management System</h1>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet congue justo.</p>
-            <a class="cta-button" href="login.html">Login</a>
-            <a class="cta-button" href="register.html">Sign Up</a>
+            <p class="hero-text">Explore our cutting-edge Real Estate Management System and take your property experience to the next level.</p>
+            <a class="cta-button" href="register.html">Join Now</a>
+        </div>
+    </section>
+
+    <section class="project-description" id="about">
+        <div class="project-content">
+            <h2>About the Project</h2>
+            <p>Discover a new era in property management with our Real Estate Management System. Designed to transform how you interact with property listings, our system offers a user-friendly interface and robust features. Simplify property searches, streamline listing management, and foster better communication between buyers, sellers, and agents. Whether you're an experienced real estate professional or a first-time homebuyer, our platform provides a seamless experience to explore properties, schedule viewings, and make well-informed decisions. Join us on this journey to redefine the real estate experience.</p>
+            <p>View the project schema <a href="schema.png">here</a>.</p>
+        </div>
+    </section>
+
+    <section class="about-team" id="team">
+        <div class="team-heading"><h2>About the Team</h2></div>
+        
+        <div class="team-content"> 
+            <div class="team-member">
+                <div class="profile-pic">
+                    <img src="css/app-data/shahzad.jpeg" alt="Profile Picture">
+                </div>
+                <h3>Mir Shahzad Mubeen</h3>
+                <h4>1DS21CS115</h4>
+                <p>Shahzad is a passionate front-end developer with a keen eye for design. He loves turning ideas into elegant and intuitive user interfaces.</p>
+            </div>
+            <div class="team-member">
+                <div class="profile-pic">
+                    <img src="css/app-data/himanshu.jpeg" alt="Profile Picture">
+                </div>
+                <h3>Himanshu K Patil</h3>
+                <h4>1DS21CS091</h4>
+                <p>JHimanshuis a skilled back-end developer who enjoys solving complex problems and optimizing systems for maximum efficiency.</p>
+            </div>
+            <div class="team-member">
+                <div class="profile-pic">
+                    <img src="css/app-data/khalid.jpeg" alt="Profile Picture">
+                </div>
+                <h3>Khlaid Raasheed</h3>
+                <h4>1DS21CS102</h4>
+                <p>Khalid is a creative UI/UX designer who is dedicated to crafting visually appealing and user-centered experiences.</p>
+            </div>
+            <div class="team-member">
+                <div class="profile-pic">
+                    <img src="css/app-data/likith.jpeg" alt="Profile Picture">
+                </div>
+                <h3>Likith S Sawakar</h3>
+                <h4>1DS21CS109</h4>
+                <p>Likithis a detail-oriented project manager who ensures that our team stays organized and delivers high-quality results on time.</p>
+            </div>
         </div>
     </section>
 
     <footer class="footer">
         <p>&copy; 2023 Real Estate Management System DSCE</p>
     </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const heroSection = document.querySelector('.hero');
+            const projectDescriptionSection = document.querySelector('.project-description');
+            const aboutTeamSection = document.querySelector('.about-team');
+
+            const windowHeight = window.innerHeight;
+            const heroSectionPosition = heroSection.getBoundingClientRect().top;
+            const projectDescriptionPosition = projectDescriptionSection.getBoundingClientRect().top;
+            const aboutTeamPosition = aboutTeamSection.getBoundingClientRect().top;
+
+            if (heroSectionPosition < windowHeight) {
+                const opacity = 1 - (heroSectionPosition / windowHeight);
+                heroSection.style.opacity = opacity;
+            }
+
+            if (projectDescriptionPosition < windowHeight - 100) {
+                projectDescriptionSection.classList.add('active');
+            }
+
+            if (aboutTeamPosition < windowHeight - 100) {
+                aboutTeamSection.classList.add('active');
+            }
+        });
+    </script>
+
 </body>
 </html>
+
