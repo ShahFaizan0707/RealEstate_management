@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.page-heading {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.locations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 800px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the content */
+    padding: 20px;
+}
+
+.location-column {
+    width: 300px;
+    height: 400px; /* Adjust the height as needed */
+    margin: 20px;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Added to handle hover effect */
+    overflow: hidden; /* Hide overflow for proper hover effect */
+}
+
+.location-name {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline from links */
+    color: white;
+    font-weight: bold;
+}
+
