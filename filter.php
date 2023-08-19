@@ -43,7 +43,22 @@
                     <label for="budget"><i class="fas fa-money-bill"></i></label>
                     <select id="budget" name="budget">
                         <option value="5000">₹5000</option>
+                        <option value="10000">₹10000</option>
+                        <option value="15000">₹15000</option>
+                        <option value="20000">₹20000</option>
+                        <option value="25000">₹25000</option>
+                        <option value="30000">₹30000</option>
+                        <option value="35000">₹35000</option>
+                        <option value="40000">₹40000</option>
+                        <option value="45000">₹45000</option>
                         <option value="50000">₹50000</option>
+                        <option value="60000">₹60000</option>
+                        <option value="70000">₹70000</option>
+                        <option value="80000">₹80000</option>
+                        <option value="90000">₹90000</option>
+                        <option value="100000">₹1 Lakh</option>
+                        <option value="150000">₹1 Lakh +</option>
+                        
                         <!-- Add more options as needed -->
                     </select>
                 </div>
@@ -61,8 +76,18 @@
             <div class="input-group">
                     <label for="builtUpArea"><i class="fas fa-ruler"></i></label>
                     <select id="builtUpArea" name="builtUpArea">
+                    <option value="300">300 sqft</option>
+                    <option value="350">350 sqft</option>
+                    <option value="400">400 sqft</option>
+                    <option value="450">450 sqft</option>
                         <option value="500">500 sqft</option>
+                        <option value="550">550 sqft</option>
+                        <option value="600">600 sqft</option>
+                        <option value="650">650 sqft</option>
+                        <option value="700">700 sqft</option>
                         <option value="1000">1000 sqft</option>
+                        <option value="1500">1500 sqft</option>
+                        <option value="2000">2000 sqft</option>
                         <!-- Add more options as needed -->
                     </select>
                 </div>
@@ -79,7 +104,7 @@
 
             <div class="input-group">
             <label for="ageOfProperty"><i class="fas fa-clock"></i></label>
-                <input type="number" id="ageOfProperty" name="ageOfProperty" placeholder="Enter the age of the property">
+                <input type="number" id="ageOfProperty" name="ageOfProperty" placeholder="Enter the age of the property" min="1">
             </div>
 
             <input type="hidden" name="selectedCity" value="<?php echo $selectedCity; ?>">
