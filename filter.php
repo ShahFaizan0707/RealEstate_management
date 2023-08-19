@@ -1,91 +1,91 @@
-<!-- filter.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filter Properties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/filter.css">
 </head>
 <body>
+  <nav class="navbar">
+  <div class="navbar-brand">
+                <img src="css/app-data/logo.png" alt="Logo">
+                <span>Shahzad</span>
+            </div>
+        <div class="navbar-links">
+            <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+
+    </nav>
+
     <?php
-    // Get the selected city from the URL
     $selectedCity = $_GET['selectedCity'];
     ?>
     <h1>Filter properties in <?php echo $selectedCity; ?></h1>
 
+    
+    
     <div class="filter-options">
         <h2>Filter Options:</h2>
-       <form id="FilterForm" action="php/filter_query.php" method="post" >
+        <form id="FilterForm" action="php/filter_query.php" method="post" class="property-form">
+            <div class="input-group">
+                    <label for="bhkType"><i class="fas fa-bed"></i></label>
+                    <select id="bhkType" name="bhkType">
+                        <option value="1">1 BHK</option>
+                        <option value="2">2 BHK</option>
+                        <option value="3">3 BHK</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
 
-        <label for="bhk_type">BHK Type:</label>
-        <select id="bhk_type" name="bhk_type"> 
-            <option value="1BHK">1 BHK</option>
-            <option value="2BHK">2 BHK</option>
-            <option value="3BHK">3 BHK</option>
-            <!-- Add more options as needed -->
-        </select>
+            <div class="input-group">
+                    <label for="budget"><i class="fas fa-money-bill"></i></label>
+                    <select id="budget" name="budget">
+                        <option value="5000">₹5000</option>
+                        <option value="50000">₹50000</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
 
-        <label for="budget">Budget (₹0 to ₹2 L+):</label>
-        <select id="budget" name="budget">
-            <option value="5000">₹5000</option>
-            <option value="10000">₹10000</option> 
-            <option value="15000">₹15000</option>
-            <option value="20000">₹20000</option>
-            <option value="25000">₹25000</option>
-            <option value="30000">₹30000</option>
-            <option value="35000">₹35000</option>
-            <option value="40000">₹40000</option>
-            <option value="45000">₹45000</option>
-            <option value="50000">₹50000</option>
-            <option value="60000">₹60000</option>
-            <option value="70000">₹70000</option>
-            <option value="80000">₹80000</option>
-            <option value="90000">₹90000</option>
-            <option value="100000">₹100000</option>
-            <option value="120000">₹120000</option>
-            <option value="150000">₹150000</option>
-            <option value="200000">₹2 L+</option>
-        </select>
+            <div class="input-group">
+                    <label for="propertyType"><i class="fas fa-building"></i></label>
+                    <select id="propertyType" name="propertyType">
+                        <option value="apartment">Apartment</option>
+                        <option value="villa">Villa</option>
+                        <option value="house">House</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
 
-        <label for="propertyType">Property Type:</label>
-        <select id="propertyType" name="propertyType">
-            <option value="apartment">Apartment</option>
-            <option value="villa">Villa</option>
-            <option value="house">House</option>
-            <!-- Add more options as needed -->
-        </select>
+            <div class="input-group">
+                    <label for="builtUpArea"><i class="fas fa-ruler"></i></label>
+                    <select id="builtUpArea" name="builtUpArea">
+                        <option value="500">500 sqft</option>
+                        <option value="1000">1000 sqft</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
 
-        <label for="builtUpArea">Built-up Area (0 sqft to 5000+ sqft):</label>
-        <select id="builtUpArea" name="builtUpArea">
-            <option value="500">500 sqft</option>
-            <option value="1000">1000 sqft</option>
-            <option value="1500">1500 sqft</option>
-            <option value="2000">2000 sqft</option>
-            <option value="2500">2500 sqft</option>
-            <option value="3000">3000 sqft</option>
-            <option value="3500">3500 sqft</option>
-            <option value="4000">4000 sqft</option>
-            <option value="4500">4500 sqft</option>
-            <option value="5000">5000 sqft</option>
-        </select>
+            <div class="input-group">
+                    <label for="furnishingType"><i class="fas fa-couch"></i></label>
+                    <select id="furnishingType" name="furnishingType">
+                        <option value="unfurnished">Unfurnished</option>
+                        <option value="semiFurnished">Semi-furnished</option>
+                        <option value="fullyFurnished">Fully furnished</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
 
-        <label for="furnishingType">Furnishing Type:</label>
-        <select id="furnishingType" name="furnishingType">
-            <option value="unfurnished">Unfurnished</option>
-            <option value="semiFurnished">Semi-furnished</option>
-            <option value="fullyFurnished">Fully furnished</option>
-            <!-- Add more options as needed -->
-        </select>
+            <div class="input-group">
+            <label for="ageOfProperty"><i class="fas fa-clock"></i></label>
+                <input type="number" id="ageOfProperty" name="ageOfProperty" placeholder="Enter the age of the property">
+            </div>
 
-        <label for="ageOfProperty">Age of Property:</label>
-        <input type="number" id="ageOfProperty" name="ageOfProperty" placeholder="Enter the age of the property">
+            <input type="hidden" name="selectedCity" value="<?php echo $selectedCity; ?>">
 
-        <input type="hidden" name="selectedCity" value="<?php echo $selectedCity; ?>">
-
-
-        <button type="submit">Apply Filters</button>
-      </form>
+            <button type="submit">Apply Filters</button>
+        </form>
     </div>
 </body>
 </html>

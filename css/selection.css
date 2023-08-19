@@ -1,46 +1,109 @@
+/* selection.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    margin: 0; 
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links a i {
+    margin-right: 5px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    width: 40px; /* Set the width of the logo */
+    margin-right: 10px; /* Add some spacing between logo and text */
+}
+
+.navbar-brand span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+    background-size: cover;
+    background: url('app-data/test1.jpg') center/cover;
+    background-position: center;
+    background-attachment: fixed; 
 }
+
+.selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
 .page-heading {
     text-align: center;
-    margin: 20px 0;
-    font-size: 24px;
-    color: #333;
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
 .locations {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    width: 800px; /* Adjust the width as needed */
-    margin: 0 auto; /* Center the content */
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .location-column {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    height: 400px;
     width: 300px;
-    height: 400px; /* Adjust the height as needed */
-    margin: 20px;
+    text-align: center;
+
     background-size: cover;
     background-position: center;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* Added to handle hover effect */
-    overflow: hidden; /* Hide overflow for proper hover effect */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.location-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .location-name {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    border-radius: 5px;
-    text-decoration: none; /* Remove underline from links */
-    color: white;
+    color: #000000;
+    text-decoration: none;
     font-weight: bold;
+    font-size: 24px;
+
 }
 
+/* Additional styling for responsiveness */
+@media screen and (max-width: 768px) {
+    .locations {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}

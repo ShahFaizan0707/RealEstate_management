@@ -5,15 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Property Search Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/result.css">
 </head>
 <body>
+
+<nav class="navbar">
+<div class="navbar-brand">
+                <img src="css/app-data/logo.png" alt="Logo">
+                <span>Shahzad</span>
+            </div>
+        <div class="navbar-links">
+            <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </nav>
+    <h1>Property Search Results</h1>
+
     <div class="container">
-        <h1>Property Search Results</h1>
+        
         <div class="property-list">
             <?php
-             //error_reporting(E_ALL);
-             //ini_set('display_errors', 1);
+             error_reporting(E_ALL);
+             ini_set('display_errors', 1);
             session_start();
 
             // Retrieve property IDs from the query parameters
@@ -57,7 +70,12 @@
                     $propertyName = $property['property_name'];
                     $propertyLocation = $property['property_location'];
                     $propertyBudget = $property['budget'];
-                    $propertySize = $property['built_up_area'];
+                    $propertySize = $property['builtUpArea'];
+                    $bhkType =$property['bhk_type'];
+                    $propertyType = $property['property_type'];
+                    $FurnishType = $property['furnish_type'];
+                    $propertyAge = $property['property_age'];
+
 
                     // Display property card with fetched details
                     echo '<div class="property-card">';
@@ -69,6 +87,11 @@
                 echo '<p>' . $propertyLocation . '</p>';
                 echo '<p>Budget: ₹' . $propertyBudget . '</p>';
                 echo '<p>Size: ' . $propertySize . ' sqft</p>';
+                echo '<p> ' . $bhkType. ' BHK</p>';
+                echo '<p>Type: ' . $propertyType . ' </p>';
+                echo '<p>Furnish: ' . $FurnishType . ' </p>';
+                echo '<p>Age: ' . $propertyAge . ' years</p>';
+
                // Check if the propertyId is in the interestedPropertyIds array
                         if (in_array($propertyId, $interestedPropertyIds)) {
                      echo '<p>Interest already shown</p>';
@@ -81,7 +104,6 @@
                 }
             }
 
-            // Close the database connection
             $conn->close();
             ?>
         </div>

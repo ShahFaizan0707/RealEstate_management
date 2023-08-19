@@ -61,7 +61,8 @@ try {
             echo "Invalid user type";
         }
     } else {
-        echo "Invalid credentials";
+        // echo "Invalid credentials";
+        header("Location: ../login.html");
     }
     
 } catch (PDOException $e) {

@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Properties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/my_properties.css">
 </head>
 <body>
+<nav class="navbar">
+<div class="navbar-brand">
+                <img src="css/app-data/logo.png" alt="Logo">
+                <span>Shahzad</span>
+            </div>
+        <div class="navbar-links">
+            <a href='add_property.php'><i class="fas fa-home"></i> Add Property</a>
+            <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </nav>
     <div class="container">
         <h1>My Properties</h1>
         <?php
@@ -70,7 +81,7 @@
             }
         }
         ?>
-        <button type="button" class="add-property-button" onclick="location.href='add_property.php';">Add Property</button>
+      
     </div>
 </body>
 </html>

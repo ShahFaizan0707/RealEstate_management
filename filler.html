@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<title>No Search Results</title>
+<style>
+
+    
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('css/app-data/sad.jpg') center/cover no-repeat;
+    background-attachment: fixed; 
+}
+
+  .message {
+    margin-top: 20%;
+    text-align: center;
+  }
+
+  .message h1,h2 {
+    font-size: 36px;
+    color: #ffffff;
+  }
+
+/* navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    margin: 0; 
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links a i {
+    margin-right: 5px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    width: 40px;
+    margin-right: 10px; 
+}
+
+.navbar-brand span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+                        <img src="css/app-data/logo.png" alt="Logo">
+                        <span>Shahzad</span>
+                    </div>
+                <div class="navbar-links">
+                    <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </nav>
+  <div class="message">
+    <h1>Seems like your search didn't bring anything up </h1>
+    <h2>Try changing the Filter options</h2>
+  </div>
+</body>
+</html>
