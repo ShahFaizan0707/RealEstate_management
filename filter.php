@@ -20,7 +20,7 @@
     </nav>
 
     <?php
-    $selectedCity = $_GET['selectedCity'];
+    $selectedCity = $_GET['selectedCity']; 
     ?>
     <h1>Filter properties in <?php echo $selectedCity; ?></h1>
 
